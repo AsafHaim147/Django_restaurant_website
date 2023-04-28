@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} Beit Haam | Cart {% endblock %}
+
+{% block content %}
+    {% if items %}
+        {% for item in items %}
+            <p> name:{{item.dish_id.name}}</p>
+            <p> amount:{{item.amount}}</p>
+            <a href="{% url 'remove_from_cart' id=item.id %}" class="btn btn-outline-danger btn-sm">Remove</a>
+        {% endfor %}
+        <p class="lead">total price = {{total}}</p>
+        <a href="{% url 'checkout' id=cart_id %}" class="btn btn-outline-primary btn-sm">Checkout</a>
+    {% else %}
+    <p class="lead">No items in cart!</p>
+    <a href="{% url 'menu' %}" class="btn btn-outline-primary">Maybe order something to eat?</a>
+    {% endif %}
+{% endblock %}
