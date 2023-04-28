@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from deliveries.models import Cart,Items,Delivery
 from main.forms import SubmitDelivery
-from django import template
 
 
 # Create your views here.

@@ -4,8 +4,10 @@
 {% block content %}
     {% if items %}
         {% for item in items %}
-            <p> name:{{item.dish_id.name}}</p>
+            <p class="lead"> name:{{item.dish_id.name}}</p>
+            <img src="{{item.dish_id.image}}" alt="{{item.dish_id.name}}" style="width:320px">
             <p> amount:{{item.amount}}</p>
+            <p> price: {% widthratio item.amount 1 item.dish_id.price %}</p>
             <a href="{% url 'remove_from_cart' id=item.id %}" class="btn btn-outline-danger btn-sm">Remove</a>
         {% endfor %}
         <p class="lead">total price = {{total}}</p>
