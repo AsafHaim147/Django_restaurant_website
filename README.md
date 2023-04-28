@@ -1,1 +1,1 @@
-This project is my django coures assessment and is built according to its guidelines.
+This project is my django course assessment and is built according to its guidelines.
